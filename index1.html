@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se elmejor</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        #centrar {
+            background-color: #d6eaf8;
+            height: 900px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-image: url("img/imgfortnitr.jpg");
+            
+        }
+
+        #centrarhijo {
+            background: #e74c3c;
+            width: 500px;
+            border-radius: 20px;
+            color: white;
+        }
+
+        #margen {
+            margin: 24px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+
+        <mi-titulo 
+        :titulo="titulo" 
+        :usuario="lblusuario" 
+        :contrasenia="lblcontrasenia" 
+        :userinput="txtusuario" 
+        :contraseniainput="txtcontrasenia"></mi-titulo>
+
+        <pre>
+            {{ $data }}
+        </pre>
+    </main>
+
+
+    <template id="inicio_sesion">
+        <div id="centrar">
+            <div id="centrarhijo">
+                <div id="margen">
+                    <h2 v-text="titulo_"></h2>
+                    <div class="form-group">
+                        <label v-text="usuario_"></label>
+                        <input type="text" class="form-control" v-model="userinput" placeholder="Ejemplo: Cazador">
+                    </div>
+                    <div class="form-group">
+                        <label v-text="contrasenia_"></label>
+                        <input type="text" class="form-control" v-model="contraseniainput" placeholder="Ejemplo: Cazando patos">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary form-control" @click="iniciarSesion">Iniciar sesion</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="JS/main1.js"></script>
+
+
+</body>
+
+</html>
