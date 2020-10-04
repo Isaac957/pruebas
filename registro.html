@@ -9,6 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="CSS/registrous.css">
 </head>
 
 <body>
@@ -26,73 +28,102 @@
         </button>
 
         <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="collapsibleNavbar" style="margin-right: 5px;">
+            <ul class="navbar-nav" style="align-items: center;">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Iniciar sesion</a>
+                    <a class="nav-link" href="index.html" style="font-size: 30px;">Prolights </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"
+                        style="color: white; font-weight: bold;">
+                        Comienza ahora
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="index.html"><i class='fas fa-address-book'
+                                style="font-size: 25px;"></i> Iniciar sesion</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-book-open" style="font-size: 25px;"></i>
+                            Conocer mas</a>
+                    </div>
                 </li>
             </ul>
         </div>
     </nav>
 
     <main>
-        <h1></h1>
 
-        <div class="container">
+        <registro :etiquetas="etiquetas" :alerta="alerta_Registro"></registro>
 
-            <h1 v-text="etiquetas.registro"></h1>
-
-            <div class="form-group">
-                <label for="" v-text="etiquetas.nombre"></label>
-                <input type="text" class="form-control form-control-lg">
-            </div>
-            <div class="form-group">
-                <label for="" v-text="etiquetas.apellidos"></label>
-                <input type="text" class="form-control form-control-lg">
-            </div>
-            <div class="form-group">
-                <label for="" v-text="etiquetas.correo"></label>
-                <input type="text" class="form-control form-control-lg">
-            </div>
-            <div class="form-group">
-                <label for="" v-text="etiquetas.pais"></label>
-                <input type="text" class="form-control form-control-lg">
-            </div>
-            <div class="form-group">
-                <label for="" v-text="etiquetas.estado"></label>
-                <input type="text" class="form-control form-control-lg">
-
-            </div>
-            <div class="form-group">
-                <label for="" v-text="etiquetas.nombreUsuario"></label>
-                <input type="text" class="form-control form-control-lg">
-
-            </div>
-            <div class="form-group">
-                <label for="" v-text="etiquetas.contrasenia1"></label>
-                <input type="text" class="form-control form-control-lg">
-
-            </div>
-            <div class="form-group">
-                <label for="" v-text="etiquetas.contrasenia2"></label>
-                <input type="text" class="form-control form-control-lg">
-
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-primary btn-lg btn-block" @click="alertaRegistro">Registrar</button>
-            </div>
-            
-            <div class="form-group">
-                <div class="alert alert-success alert-dismissible" v-show="alerta_Registro">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
-                    <strong>Registro exitoso!</strong> Ahora puedes Iniciar sesion con tu usuario y contrasenia.
-                </div>
-            </div>
-        </div>
 
     </main>
 
 
+
+
+
+
+
+
+
+
+    <!-- Componentes ///////////////////////////////////////////////////////////////////////// -->
+    <template id="registro_us">
+        <div>
+            <div class="container d-flex justify-content-center" id="tituloReg">
+                <h1 v-text="etiquetas.registro"></h1>
+            </div>
+            <div class="container" id="fondoFormulario">
+
+                <div class="form-group">
+                    <label for="" v-text="etiquetas.nombre"></label>
+                    <input type="text" class="form-control form-control-lg">
+                </div>
+                <div class="form-group">
+                    <label for="" v-text="etiquetas.apellidos"></label>
+                    <input type="text" class="form-control form-control-lg">
+                </div>
+                <div class="form-group">
+                    <label for="" v-text="etiquetas.correo"></label>
+                    <input type="text" class="form-control form-control-lg">
+                </div>
+                <div class="form-group">
+                    <label for="" v-text="etiquetas.pais"></label>
+                    <input type="text" class="form-control form-control-lg">
+                </div>
+                <div class="form-group">
+                    <label for="" v-text="etiquetas.estado"></label>
+                    <input type="text" class="form-control form-control-lg">
+
+                </div>
+                <div class="form-group">
+                    <label for="" v-text="etiquetas.nombreUsuario"></label>
+                    <input type="text" class="form-control form-control-lg">
+
+                </div>
+                <div class="form-group">
+                    <label for="" v-text="etiquetas.contrasenia1"></label>
+                    <input type="text" class="form-control form-control-lg">
+
+                </div>
+                <div class="form-group">
+                    <label for="" v-text="etiquetas.contrasenia2"></label>
+                    <input type="text" class="form-control form-control-lg">
+
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary btn-lg btn-block"
+                        @click="alertaRegistro">Registrar</button>
+                </div>
+
+                <div class="form-group">
+                    <div class="alert alert-success alert-dismissible" v-show="alerta_">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Registro exitoso!</strong> Ahora puedes Iniciar sesion con tu usuario y contrasenia.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </template>
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

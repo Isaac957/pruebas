@@ -4,43 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Se elmejor</title>
+    <title>Juego Competitivo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <style>
-        #centrar {
-            background-color: #d6eaf8;
-            height: 900px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background-image: url("img/imgfortnitr.jpg");
-
-        }
-
-        #centrarhijo {
-            background: #e74c3c;
-            width: 500px;
-            border-radius: 20px;
-            color: white;
-        }
-
-        #margen {
-            margin: 24px;
-        }
-    </style>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="CSS/loging.css">
 </head>
 
 <body>
 
     <main>
 
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">
+                <img src="img/fornitelogo.png" alt="">
+            </a>
+    
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar" style="margin-right: 5px;">
+                <ul class="navbar-nav" style="align-items: center;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="font-size: 30px;">Prolights </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"
+                            style="color: white; font-weight: bold;">
+                            Comienza ahora
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="registro.html"><i class='fas fa-address-book'
+                                    style="font-size: 25px;"></i> Registrar ahora</a>
+                            <a class="dropdown-item" href="#"><i class="fas fa-book-open" style="font-size: 25px;"></i>
+                                Conocer mas</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-        <mi-titulo :titulo="titulo" :usuario="lblusuario" :contrasenia="lblcontrasenia" :userinput="txtusuario"
-            :contraseniainput="txtcontrasenia"></mi-titulo>
+
+        <mi-titulo :etiquetas="etiquetas" :inputs="inputs"></mi-titulo>
 
         <pre>
             {{ $data }}
@@ -49,30 +60,31 @@
 
 
     <template id="inicio_sesion">
-        <div id="centrar">
-            <div id="centrarhijo">
-                <div id="margen">
-                    <h2 v-text="titulo_"></h2>
+        <div class="container">
+            <div class="row justify-content-center align-items-center minh-100">
+                <div class="col" id="fondoLog">
+                    <div class="" style="background: red; border-radius: 250px; width: 115px;">
+                        <h1 style="text-align: center;"><i class="fas fa-headset" style="font-size: 100px;"></i></h1>
+                    </div>
+                    <h2 v-text="etiquetas.titulo"></h2>
                     <div class="form-group">
-                        <label v-text="usuario_"></label>
-                        <input type="text" class="form-control" v-model="userinput" placeholder="Ejemplo: Cazador">
+                        <label v-text="etiquetas.usuario_"></label>
+                        <input type="text" class="form-control" v-model="inputs_.usuario" placeholder="Ejemplo: Cazador">
                     </div>
                     <div class="form-group">
-                        <label v-text="contrasenia_"></label>
-                        <input type="text" class="form-control" v-model="contraseniainput"
+                        <label v-text="etiquetas.contrasenia_"></label>
+                        <input type="text" class="form-control" v-model="inputs_.contrasenia"
                             placeholder="Ejemplo: Cazando patos">
                     </div>
-
                     <div class="form-group">
                         <button class="btn btn-primary form-control" @click="iniciarSesion">Iniciar sesion</button>
-
                     </div>
                     <div class="d-flex flex-row-reverse">
                         <a href="registro.html" style="color: white; font-weight: bold;">Aun no tienes una cuenta?</a>
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
     </template>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

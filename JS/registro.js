@@ -1,3 +1,18 @@
+Vue.component('registro',{
+    props: ['etiquetas','alerta'],
+    template:'#registro_us',
+    methods:{
+        alertaRegistro(){
+            this.alerta_ = true;
+        }
+    },
+    data(){
+        return{
+            alerta_: this.alerta
+        }
+    }
+})
+
 new Vue({
     el: 'main',
     data: {
@@ -13,10 +28,5 @@ new Vue({
             contrasenia2:'Confirma contrasenia'
         },
         alerta_Registro: false
-    },
-    methods:{
-        alertaRegistro(){
-            this.alerta_Registro = true;
-        }
     }
 });

@@ -1,0 +1,14 @@
+.minh-100{
+    height: 100vh;
+}
+
+#fondoLog{
+    background-color: #21618c;
+    color: white;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+#menu{
+    color: white;
+}
